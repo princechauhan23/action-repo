@@ -1,17 +1,17 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import DevDailyTracker from './components/DevDailyTracker';
 import Roadmap from './components/Roadmap';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dev-tracker" element={<DevDailyTracker />} />
         <Route path="/roadmap" element={<Roadmap />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
