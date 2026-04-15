@@ -19,7 +19,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0f172a; /* tailwind slate-900 */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,85 +28,7 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-#root {
-  width: 100%;
-}
-
-/* Cyberpunk specific styles */
-.scanline {
-  width: 100%;
-  height: 100px;
-  z-index: 9999;
-  position: absolute;
-  pointer-events: none;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(255, 255, 255, 0.2) 10%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-  opacity: 0.1;
-  position: fixed;
-  bottom: 100%;
-  animation: scanline 10s linear infinite;
-}
-
-@keyframes scanline {
-  0% {
-    bottom: 100%;
-  }
-  80% {
-    bottom: 100%;
-  }
-  100% {
-    bottom: -100px;
-  }
-}
-
-.neon-border-cyan {
-  border: 1px solid var(--color-cyber-cyan);
-  box-shadow: 0 0 10px rgba(0, 245, 255, 0.5), inset 0 0 5px rgba(0, 245, 255, 0.2);
-}
-
-.neon-border-magenta {
-  border: 1px solid var(--color-cyber-magenta);
-  box-shadow: 0 0 10px rgba(255, 0, 200, 0.5), inset 0 0 5px rgba(255, 0, 200, 0.2);
-}
-
-.neon-border-green {
-  border: 1px solid var(--color-cyber-green);
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), inset 0 0 5px rgba(57, 255, 20, 0.2);
-}
-
-.neon-text-cyan {
-  color: var(--color-cyber-cyan);
-  text-shadow: 0 0 5px rgba(0, 245, 255, 0.8);
-}
-
-.neon-text-magenta {
-  color: var(--color-cyber-magenta);
-  text-shadow: 0 0 5px rgba(255, 0, 200, 0.8);
-}
-
-.neon-text-green {
-  color: var(--color-cyber-green);
-  text-shadow: 0 0 5px rgba(57, 255, 20, 0.8);
-}
-
-.crt-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
-  z-index: 9998;
-  pointer-events: none;
-}
