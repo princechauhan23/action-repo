@@ -3,6 +3,7 @@ import axios from 'axios';
 import { PacManGame } from './games/PacManGame';
 import { OggyGame } from './games/OggyGame';
 import { ShinChanGame } from './games/ShinChanGame';
+import './DevDailyTracker.css';
 
 // --- Particle Background ---
 const ParticleBackground = () => {
@@ -380,7 +381,7 @@ const AiNews = () => {
 
 export default function DevDailyTracker() {
   return (
-    <div className="min-h-screen bg-[#0d0d0d] text-gray-300 font-['JetBrains_Mono'] relative overflow-hidden flex flex-col">
+    <div className="dev-tracker-wrapper min-h-screen bg-[#0d0d0d] text-gray-300 font-['JetBrains_Mono'] relative overflow-hidden flex flex-col">
       {/* Background Effects */}
       <ParticleBackground />
       <div className="scanline"></div>
