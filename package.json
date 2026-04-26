@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:docker": "docker build -t action-repo:latest .",
+    "start:docker": "docker run -d -p 8080:80 --name my-action-app action-repo:latest",
+    "stop:docker": "docker stop my-action-app"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
