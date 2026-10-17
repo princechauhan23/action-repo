@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { DocMeta } from '@/core/registry/schema';
 import { Card, CardContent, CardHeader } from '@/shared/ui/Card';
@@ -12,9 +12,7 @@ interface DocCardProps {
 }
 
 export function DocCard({ doc }: DocCardProps) {
-  const isNew = useMemo(() => {
-    return new Date(doc.createdAt).getTime() > Date.now() - 7 * 24 * 60 * 60 * 1000;
-  }, [doc.createdAt]);
+  const isNew = new Date(doc.createdAt).getTime() > new Date().getTime() - 7 * 24 * 60 * 60 * 1000;
 
   return (
     <Link to={`/docs/${doc.slug}`} className="block h-full group outline-none">

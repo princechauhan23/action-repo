@@ -25,6 +25,19 @@ export function Gallery() {
     setSearchParams(searchParams, { replace: true });
   };
 
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleCategory = (c: string) => {
     if (c === 'all') {
       searchParams.delete('cat');
@@ -64,6 +77,7 @@ export function Gallery() {
          <div className="relative w-full sm:max-w-xs">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
+              ref={searchInputRef}
               type="text"
               placeholder="Search docs... (Press '/')"
               value={query}
