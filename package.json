@@ -10,20 +10,34 @@
     "preview": "vite preview",
     "build:docker": "docker build -t action-repo:latest .",
     "start:docker": "docker run -d -p 8080:80 --name my-action-app action-repo:latest",
-    "stop:docker": "docker stop my-action-app"
+    "stop:docker": "docker stop my-action-app",
+    "new:doc": "node scripts/new-doc.js",
+    "test": "npx playwright test && vitest run"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/react-query": "^5.104.3",
     "axios": "^1.13.6",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "date-fns": "^4.4.0",
+    "date-fns-tz": "^3.2.0",
     "lucide-react": "^0.577.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.14.1",
-    "recharts": "^3.8.0",
-    "tailwindcss": "^4.2.1"
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.2.1",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.64.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
@@ -31,7 +45,12 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "jsdom": "^29.1.1",
+    "npm-run-all": "^4.1.5",
     "playwright": "^1.59.1",
-    "vite": "^7.2.4"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^7.2.4",
+    "vitest": "^5.0.5"
   }
 }

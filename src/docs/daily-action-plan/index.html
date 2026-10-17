@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      color: #333;
+      background: #f9f9f9;
+      padding: 2rem;
+    }
+    :root.dark {
+      color: #eee;
+      background: #111;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    :root.dark .container {
+      background: #222;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    }
+    h1 { color: #10b981; }
+    ul { list-style-type: none; padding: 0; }
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    :root.dark li { border-bottom-color: #333; }
+    li::before {
+      content: "☐";
+      margin-right: 0.5rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Daily Action Plan</h1>
+    <p>Focus for today: Deep work on backend architecture.</p>
+    <ul>
+      <li>08:00 - Review PRs</li>
+      <li>09:00 - Architecture planning meeting</li>
+      <li>10:30 - Deep work block 1 (API design)</li>
+      <li>13:00 - Lunch & Walk</li>
+      <li>14:00 - Deep work block 2 (Implementation)</li>
+      <li>17:30 - Wrap up and daily review</li>
+    </ul>
+  </div>
+</body>
+</html>
